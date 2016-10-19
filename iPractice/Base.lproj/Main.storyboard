@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WtW-W5-jml">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -7,6 +7,62 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Activity-->
+        <scene sceneID="WLG-DJ-I1u">
+            <objects>
+                <viewController id="jJA-mr-KVR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xKD-k4-45l"/>
+                        <viewControllerLayoutGuide type="bottom" id="zt5-9W-9O4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fws-FU-dQ3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Activity" image="To Do-25" id="7sc-2O-uMJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aTA-vP-pBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-831" y="327"/>
+        </scene>
+        <!--Practice-->
+        <scene sceneID="jbS-Qe-HDc">
+            <objects>
+                <viewController id="Rax-b9-19b" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e3R-zW-4Vn"/>
+                        <viewControllerLayoutGuide type="bottom" id="3gw-Ce-d3L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="379-0R-7GH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Practice" image="practice-tab" id="pwm-8j-6aI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ixk-Mr-GqF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-831" y="-327"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="gF6-S2-Qa0">
+            <objects>
+                <tabBarController id="WtW-W5-jml" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="TSW-Kw-Sz8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Rax-b9-19b" kind="relationship" relationship="viewControllers" id="U3I-d4-tqH"/>
+                        <segue destination="jJA-mr-KVR" kind="relationship" relationship="viewControllers" id="v23-xm-XE4"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vUs-fK-K7H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1779" y="0.0"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -122,6 +178,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="To Do-25" width="30" height="30"/>
         <image name="happy" width="512" height="430"/>
+        <image name="practice-tab" width="28" height="22"/>
     </resources>
 </document>
