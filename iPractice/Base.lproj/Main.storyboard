@@ -194,7 +194,7 @@
         <scene sceneID="j8D-yK-0ji">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QQz-eO-dgY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Activity" image="To Do-25" id="SAo-xl-1Jg"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="activity-icon" id="SAo-xl-1Jg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="u6d-39-GOh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -211,7 +211,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="To Do-25" width="30" height="30"/>
+        <image name="activity-icon" width="25" height="25"/>
         <image name="practice-tab" width="28" height="22"/>
     </resources>
 </document>
