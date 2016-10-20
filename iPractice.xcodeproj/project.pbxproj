@@ -15,7 +15,7 @@
 		209B49921D6954F1006927EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209B49901D6954F1006927EA /* LaunchScreen.storyboard */; };
 		209B499D1D6954F2006927EA /* iPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B499C1D6954F2006927EA /* iPracticeTests.swift */; };
 		209B49A81D6954F2006927EA /* iPracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B49A71D6954F2006927EA /* iPracticeUITests.swift */; };
-		20B71B3C1DB87E81003ED640 /* MainTaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B71B3B1DB87E81003ED640 /* MainTaskListTableViewController.swift */; };
+		20B71B3C1DB87E81003ED640 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B71B3B1DB87E81003ED640 /* AddTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,7 @@
 		209B49A31D6954F2006927EA /* iPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		209B49A71D6954F2006927EA /* iPracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPracticeUITests.swift; sourceTree = "<group>"; };
 		209B49A91D6954F2006927EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		20B71B3B1DB87E81003ED640 /* MainTaskListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTaskListTableViewController.swift; sourceTree = "<group>"; };
+		20B71B3B1DB87E81003ED640 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +103,7 @@
 			children = (
 				209B49871D6954F1006927EA /* AppDelegate.swift */,
 				202F3F6C1DB83B0F00D3F1CB /* TaskListTableViewController.swift */,
-				20B71B3B1DB87E81003ED640 /* MainTaskListTableViewController.swift */,
+				20B71B3B1DB87E81003ED640 /* AddTaskViewController.swift */,
 				202F3F8E1DB8670700D3F1CB /* ActivityTableViewController.swift */,
 				209B498B1D6954F1006927EA /* Main.storyboard */,
 				209B498E1D6954F1006927EA /* Assets.xcassets */,
@@ -268,7 +268,7 @@
 				202F3F6D1DB83B0F00D3F1CB /* TaskListTableViewController.swift in Sources */,
 				209B49881D6954F1006927EA /* AppDelegate.swift in Sources */,
 				202F3F8F1DB8670700D3F1CB /* ActivityTableViewController.swift in Sources */,
-				20B71B3C1DB87E81003ED640 /* MainTaskListTableViewController.swift in Sources */,
+				20B71B3C1DB87E81003ED640 /* AddTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

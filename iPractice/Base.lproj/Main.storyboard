@@ -37,9 +37,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="taskListTable" destination="J43-TX-SEP" id="wM7-I2-jhI"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YH6-bC-nnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -48,7 +45,7 @@
         <!--Add task-->
         <scene sceneID="z8F-zi-AkA">
             <objects>
-                <viewController title="Add task" id="UYt-WM-HvP" customClass="TaskListTableViewController" customModule="iPractice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add task" id="UYt-WM-HvP" customClass="AddTaskViewController" customModule="iPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fES-Hh-cT9"/>
                         <viewControllerLayoutGuide type="bottom" id="aPj-OA-5wS"/>
@@ -71,12 +68,12 @@
                                     <navigationItem title="Add task" id="17d-Tc-erI">
                                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="V32-Rd-y2R">
                                             <connections>
-                                                <action selector="dismissAddTask:" destination="UYt-WM-HvP" id="heH-a2-MD9"/>
+                                                <action selector="cancel:" destination="UYt-WM-HvP" id="4xb-iM-DgR"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="6fB-qy-Ncf">
                                             <connections>
-                                                <action selector="saveTaskPressed:" destination="UYt-WM-HvP" id="LqD-Da-8Xv"/>
+                                                <action selector="save:" destination="UYt-WM-HvP" id="lbE-pk-cej"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -86,7 +83,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="task" destination="8gb-5W-hk4" id="GbE-aW-34C"/>
+                        <outlet property="taskNameTextField" destination="8gb-5W-hk4" id="FkT-6p-P8K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfQ-n9-qXk" userLabel="First Responder" sceneMemberID="firstResponder"/>
