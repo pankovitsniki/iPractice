@@ -34,6 +34,19 @@ class AddTaskViewController: UIViewController {
     }
     
     @IBAction func save(_ sender: UIBarButtonItem) {
+        //Task field is empty, don't add anything
+        if (taskNameTextField.text == ""){
+            // fix SVProgressHud
+            print("You haven't added any tasks. Please try again!")
+        } else {
+            //add task
+            let name: String = taskNameTextField.text!
+            tasks.addTask(name: name)
+            
+            //dismiss keyboard and reset fields
+            dismiss(animated: true, completion: nil)
+        
+        }
         
     }
 
