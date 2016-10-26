@@ -8,13 +8,18 @@
 
 import Foundation
 
-var tasks = AllTasks()
 
 struct Task {
     var name: String
 }
 
-class AllTasks {
+class AllTasks: NSObject {
+    
+    static let shared: AllTasks = {
+        let instance = AllTasks()
+        
+        return instance
+    }()
     
     var list = [Task]()
     

@@ -27,13 +27,13 @@ class TaskListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return tasks.list.count
+        return AllTasks.shared.list.count
     }
     
     override func tableView(_ tableView:UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
         
-        cell.textLabel!.text = tasks.list[indexPath.row].name
+        cell.textLabel!.text = AllTasks.shared.list[indexPath.row].name
         
         return cell
     }
@@ -42,7 +42,7 @@ class TaskListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         if (editingStyle == .delete) {
-            tasks.list.remove(at: indexPath.row)
+            AllTasks.shared.list.remove(at: indexPath.row)
             taskListTable.reloadData()
         }
     }
