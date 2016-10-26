@@ -10,6 +10,7 @@
 		202F3F6D1DB83B0F00D3F1CB /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F3F6C1DB83B0F00D3F1CB /* TaskListTableViewController.swift */; };
 		202F3F8F1DB8670700D3F1CB /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F3F8E1DB8670700D3F1CB /* ActivityTableViewController.swift */; };
 		206575751DC018770071E227 /* AllTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206575741DC018770071E227 /* AllTasks.swift */; };
+		206575771DC02C2E0071E227 /* PracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206575761DC02C2E0071E227 /* PracticeViewController.swift */; };
 		209B49881D6954F1006927EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B49871D6954F1006927EA /* AppDelegate.swift */; };
 		209B498D1D6954F1006927EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209B498B1D6954F1006927EA /* Main.storyboard */; };
 		209B498F1D6954F1006927EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 209B498E1D6954F1006927EA /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		202F3F6C1DB83B0F00D3F1CB /* TaskListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
 		202F3F8E1DB8670700D3F1CB /* ActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
 		206575741DC018770071E227 /* AllTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTasks.swift; sourceTree = "<group>"; };
+		206575761DC02C2E0071E227 /* PracticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeViewController.swift; sourceTree = "<group>"; };
 		209B49841D6954F1006927EA /* iPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		209B49871D6954F1006927EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		209B498C1D6954F1006927EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,10 +106,11 @@
 			isa = PBXGroup;
 			children = (
 				209B49871D6954F1006927EA /* AppDelegate.swift */,
+				206575761DC02C2E0071E227 /* PracticeViewController.swift */,
 				202F3F6C1DB83B0F00D3F1CB /* TaskListTableViewController.swift */,
 				20B71B3B1DB87E81003ED640 /* AddTaskViewController.swift */,
-				206575741DC018770071E227 /* AllTasks.swift */,
 				202F3F8E1DB8670700D3F1CB /* ActivityTableViewController.swift */,
+				206575741DC018770071E227 /* AllTasks.swift */,
 				209B498B1D6954F1006927EA /* Main.storyboard */,
 				209B498E1D6954F1006927EA /* Assets.xcassets */,
 				209B49901D6954F1006927EA /* LaunchScreen.storyboard */,
@@ -271,6 +274,7 @@
 				202F3F6D1DB83B0F00D3F1CB /* TaskListTableViewController.swift in Sources */,
 				206575751DC018770071E227 /* AllTasks.swift in Sources */,
 				209B49881D6954F1006927EA /* AppDelegate.swift in Sources */,
+				206575771DC02C2E0071E227 /* PracticeViewController.swift in Sources */,
 				202F3F8F1DB8670700D3F1CB /* ActivityTableViewController.swift in Sources */,
 				20B71B3C1DB87E81003ED640 /* AddTaskViewController.swift in Sources */,
 			);

@@ -36,7 +36,7 @@ class AddTaskViewController: UIViewController {
     @IBAction func save(_ sender: UIBarButtonItem) {
         //Task field is empty, don't add anything
         if (taskNameTextField.text == ""){
-            // fix SVProgressHud
+            // TODO: SVProgressHud
             print("You haven't added any tasks. Please try again!")
         } else {
             //add task

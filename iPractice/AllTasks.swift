@@ -8,16 +8,18 @@
 
 import Foundation
 
-var tasks: AllTasks = AllTasks()
+var tasks = AllTasks()
 
-struct task {
+struct Task {
     var name: String
 }
 
-class AllTasks: NSObject {
-    var taskList = [task]()
+class AllTasks {
+    
+    var list = [Task]()
     
     func addTask(name: String) {
-        taskList.append(task(name: name))
-    }    
+        list.append(Task(name: name))
+    }
+    
 }
