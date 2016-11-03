@@ -11,10 +11,18 @@ import UIKit
 
 class PracticeViewController: UIViewController,UIPopoverPresentationControllerDelegate {
     
+    @IBOutlet weak var timerButton: UILabel!
+
+    @IBOutlet weak var startButton: UIButton!
+    
+    var counter = 1200
+    var timer = Timer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        timerButton.text = timeFormatted(totalSeconds: counter)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,8 +32,6 @@ class PracticeViewController: UIViewController,UIPopoverPresentationControllerDe
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        navigationItem.title = 
-        
     }
 
     /*
@@ -38,7 +44,37 @@ class PracticeViewController: UIViewController,UIPopoverPresentationControllerDe
     }
     */
     
+    func timeFormatted(totalSeconds: Int) -> String {
+        let seconds: Int = totalSeconds % 60
+        let minutes: Int = (totalSeconds / 60) % 60
+        return String(format: "%02d:%02d", minutes, seconds)
+    }
+    
+    func setLabelText(value: String) {
+        timerButton.text = value
+    }
+    
+    func updateCounter() {
+        counter -= 1
+        if counter < 0 {
+            timer.invalidate()
+        }
+        else {
+            setLabelText(value: timeFormatted(totalSeconds: counter))
+        }
+    }
+    
+    func updateLabel(value: Int) {
+        setLabelText(value: timeFormatted(totalSeconds: value))
+    }
+    
+    
     // MARK: - Actions
+    @IBAction func startButtonPressed(_ sender: Any) {
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+        
+    }
+    
     
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
         navigationController?.dismiss(animated: true, completion: nil)

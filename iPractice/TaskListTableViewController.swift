@@ -12,6 +12,9 @@ import UIKit
 class TaskListTableViewController: UITableViewController {
     
     @IBOutlet var taskListTable: UITableView!
+    @IBAction func editButtonPressed(_ sender: AnyObject) {
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +48,19 @@ class TaskListTableViewController: UITableViewController {
             AllTasks.shared.list.remove(at: indexPath.row)
             taskListTable.reloadData()
         }
+    }
+    
+    // Override to support rearranging the table view.
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+        
+        if fromIndexPath.row > to.row {
+            AllTasks.shared.list.insert(AllTasks.shared.list[fromIndexPath.row], at: to.row)
+            AllTasks.shared.list.remove(at: fromIndexPath.row + 1)
+        } else {
+            AllTasks.shared.list.insert(AllTasks.shared.list[fromIndexPath.row], at: to.row + 1)
+            AllTasks.shared.list.remove(at: fromIndexPath.row)
+        }
+        
     }
     
 }
