@@ -68,7 +68,6 @@ class PracticeViewController: UIViewController,UIPopoverPresentationControllerDe
         setLabelText(value: timeFormatted(totalSeconds: value))
     }
     
-    
     // MARK: - Actions
     @IBAction func startButtonPressed(_ sender: Any) {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
@@ -81,10 +80,6 @@ class PracticeViewController: UIViewController,UIPopoverPresentationControllerDe
         counter = 1200
         timerButton.text = timeFormatted(totalSeconds: counter)
         
-    }
-    
-    @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
-        navigationController?.dismiss(animated: true, completion: nil)
     }
 
 }
