@@ -63,4 +63,20 @@ class TaskListTableViewController: UITableViewController {
         
     }
     
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "startPractice" {
+            // we should prepare our PracticeViewController
+            if let pvc = segue.destination as? PracticeViewController {
+                if let indexPath = self.tableView.indexPath(for: sender as! UITableViewCell) {
+                    pvc.task = AllTasks.shared.list[indexPath.row]
+                }
+            }
+            
+        }
+    }
+    
+    
 }

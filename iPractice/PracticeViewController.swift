@@ -9,13 +9,14 @@
 import UIKit
 
 
-class PracticeViewController: UIViewController,UIPopoverPresentationControllerDelegate {
+class PracticeViewController: UIViewController {
     
     @IBOutlet weak var timerButton: UILabel!
     @IBOutlet weak var startButton: UIButton!
     
-    var counter = 1200
-    var timer = Timer()
+    var task: Task?
+    private var counter = 1200
+    private var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,8 @@ class PracticeViewController: UIViewController,UIPopoverPresentationControllerDe
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        title = task?.name
     }
 
     /*
@@ -57,8 +60,8 @@ class PracticeViewController: UIViewController,UIPopoverPresentationControllerDe
         counter -= 1
         if counter < 0 {
             timer.invalidate()
-        }
-        else {
+            task?.completionDates.append(Date())
+        } else {
             setLabelText()
         }
     }
@@ -71,6 +74,7 @@ class PracticeViewController: UIViewController,UIPopoverPresentationControllerDe
     @IBAction func stopButtonPressed(_ sender: Any) {
         timer.invalidate()
     }
+    
     @IBAction func resetButtonPressed(_ sender: Any) {
         counter = 1200
         setLabelText()

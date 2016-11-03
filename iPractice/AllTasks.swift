@@ -11,13 +11,16 @@ import Foundation
 
 struct Task {
     var name: String
+    var completionDates = [Date]()
+    init(name: String) {
+        self.name = name
+    }
 }
 
 class AllTasks: NSObject {
     
     static let shared: AllTasks = {
         let instance = AllTasks()
-        
         return instance
     }()
     

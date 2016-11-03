@@ -26,7 +26,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="uOZ-ej-4EP" kind="show" id="wC9-vR-MTq"/>
+                                    <segue destination="uOZ-ej-4EP" kind="show" identifier="startPractice" id="wC9-vR-MTq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -43,7 +43,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="T77-vm-qrE">
                             <connections>
-                                <segue destination="UYt-WM-HvP" kind="presentation" id="bdi-Zb-1hy"/>
+                                <segue destination="UYt-WM-HvP" kind="presentation" identifier="addTask" id="bdi-Zb-1hy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
