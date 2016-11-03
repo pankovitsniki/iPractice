@@ -12,7 +12,6 @@ import UIKit
 class PracticeViewController: UIViewController,UIPopoverPresentationControllerDelegate {
     
     @IBOutlet weak var timerButton: UILabel!
-
     @IBOutlet weak var startButton: UIButton!
     
     var counter = 1200
@@ -50,8 +49,8 @@ class PracticeViewController: UIViewController,UIPopoverPresentationControllerDe
         return String(format: "%02d:%02d", minutes, seconds)
     }
     
-    func setLabelText(value: String) {
-        timerButton.text = value
+    func setLabelText() {
+        timerButton.text = timeFormatted(totalSeconds: counter)
     }
     
     func updateCounter() {
@@ -60,12 +59,8 @@ class PracticeViewController: UIViewController,UIPopoverPresentationControllerDe
             timer.invalidate()
         }
         else {
-            setLabelText(value: timeFormatted(totalSeconds: counter))
+            setLabelText()
         }
-    }
-    
-    func updateLabel(value: Int) {
-        setLabelText(value: timeFormatted(totalSeconds: value))
     }
     
     // MARK: - Actions
@@ -78,7 +73,7 @@ class PracticeViewController: UIViewController,UIPopoverPresentationControllerDe
     }
     @IBAction func resetButtonPressed(_ sender: Any) {
         counter = 1200
-        timerButton.text = timeFormatted(totalSeconds: counter)
+        setLabelText()
         
     }
 
