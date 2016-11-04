@@ -10,11 +10,13 @@ import Foundation
 
 
 struct Task {
+    
     var name: String
     var completionDates = [Date]()
     init(name: String) {
         self.name = name
     }
+        
 }
 
 class AllTasks: NSObject {
@@ -28,6 +30,7 @@ class AllTasks: NSObject {
     
     func addTask(name: String) {
         list.append(Task(name: name))
+        
     }
     
 }

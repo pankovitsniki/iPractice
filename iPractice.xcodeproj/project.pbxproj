@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		202F3F6D1DB83B0F00D3F1CB /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F3F6C1DB83B0F00D3F1CB /* TaskListTableViewController.swift */; };
 		202F3F8F1DB8670700D3F1CB /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F3F8E1DB8670700D3F1CB /* ActivityTableViewController.swift */; };
+		203959881DCD177B007554CD /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 203959871DCD177B007554CD /* data.plist */; };
+		2039598E1DCD366F007554CD /* AllTasksStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2039598D1DCD366F007554CD /* AllTasksStore.swift */; };
 		206575751DC018770071E227 /* AllTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206575741DC018770071E227 /* AllTasks.swift */; };
 		206575771DC02C2E0071E227 /* PracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206575761DC02C2E0071E227 /* PracticeViewController.swift */; };
 		209B49881D6954F1006927EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B49871D6954F1006927EA /* AppDelegate.swift */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		202F3F6C1DB83B0F00D3F1CB /* TaskListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
 		202F3F8E1DB8670700D3F1CB /* ActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
+		203959871DCD177B007554CD /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
+		2039598D1DCD366F007554CD /* AllTasksStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTasksStore.swift; sourceTree = "<group>"; };
 		206575741DC018770071E227 /* AllTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTasks.swift; sourceTree = "<group>"; };
 		206575761DC02C2E0071E227 /* PracticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeViewController.swift; sourceTree = "<group>"; };
 		209B49841D6954F1006927EA /* iPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,9 +110,11 @@
 			isa = PBXGroup;
 			children = (
 				209B49871D6954F1006927EA /* AppDelegate.swift */,
+				203959871DCD177B007554CD /* data.plist */,
 				206575761DC02C2E0071E227 /* PracticeViewController.swift */,
 				202F3F6C1DB83B0F00D3F1CB /* TaskListTableViewController.swift */,
 				20B71B3B1DB87E81003ED640 /* AddTaskViewController.swift */,
+				2039598D1DCD366F007554CD /* AllTasksStore.swift */,
 				202F3F8E1DB8670700D3F1CB /* ActivityTableViewController.swift */,
 				206575741DC018770071E227 /* AllTasks.swift */,
 				209B498B1D6954F1006927EA /* Main.storyboard */,
@@ -245,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				209B49921D6954F1006927EA /* LaunchScreen.storyboard in Resources */,
+				203959881DCD177B007554CD /* data.plist in Resources */,
 				209B498F1D6954F1006927EA /* Assets.xcassets in Resources */,
 				209B498D1D6954F1006927EA /* Main.storyboard in Resources */,
 			);
@@ -275,6 +282,7 @@
 				206575751DC018770071E227 /* AllTasks.swift in Sources */,
 				209B49881D6954F1006927EA /* AppDelegate.swift in Sources */,
 				206575771DC02C2E0071E227 /* PracticeViewController.swift in Sources */,
+				2039598E1DCD366F007554CD /* AllTasksStore.swift in Sources */,
 				202F3F8F1DB8670700D3F1CB /* ActivityTableViewController.swift in Sources */,
 				20B71B3C1DB87E81003ED640 /* AddTaskViewController.swift in Sources */,
 			);
