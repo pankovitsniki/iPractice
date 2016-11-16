@@ -41,7 +41,7 @@ class AddTaskViewController: UIViewController {
         } else {
             //add task
             let name: String = taskNameTextField.text!
-            AllTasks.shared.addTask(name)
+            AllTasks.shared.addTask(name: name)
             
             //dismiss keyboard and reset fields
             dismiss(animated: true, completion: nil)

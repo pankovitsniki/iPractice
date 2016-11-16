@@ -28,7 +28,7 @@ class AllTasks: NSObject {
     
     var list = [Task]()
     
-    func addTask(_ name: String) {
+    func addTask(name: String) {
         list.append(Task(name: name))
         
     }
