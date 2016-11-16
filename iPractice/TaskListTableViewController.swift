@@ -16,35 +16,9 @@ class TaskListTableViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
     
-    let name = "name"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let name = "name"
-//        let name1 = "name1"
-
-        if let plist = Plist(name: "data") {
-            
-            let dict = plist.getMutablePlistFile()!
-            dict[name] = "testing it" //AllTasks.shared.list
-            
-            do {
-                try plist.addValuesToPlistFile(dictionary: dict)
-            } catch {
-                print(error)
-            }
-            
-            print(plist.getValuesInPlistFile()!)
-        } else {
-            print("Unable to get Plist")
-        }
-        
-//        print("The value for key is: \(AllTasksStore.sharedInstance.getValueForKey(key: name)) ")
-//        AllTasksStore.sharedInstance.saveValue(value: "dfsdfsdfs" as AnyObject, forKey: name)
-//        AllTasksStore.sharedInstance.addNewItemWithKey(key: name1, value: "nikikeee" as AnyObject)
-
-        //        taskListTable.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -15,13 +15,13 @@ class PracticeViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     
     var task: Task?
-    private var counter = 1200
-    private var timer = Timer()
+    fileprivate var counter = 1200
+    fileprivate var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        timerButton.text = timeFormatted(totalSeconds: counter)
+        timerButton.text = timeFormatted(counter)
         
     }
 
@@ -46,14 +46,14 @@ class PracticeViewController: UIViewController {
     }
     */
     
-    func timeFormatted(totalSeconds: Int) -> String {
+    func timeFormatted(_ totalSeconds: Int) -> String {
         let seconds: Int = totalSeconds % 60
         let minutes: Int = (totalSeconds / 60) % 60
         return String(format: "%02d:%02d", minutes, seconds)
     }
     
     func setLabelText() {
-        timerButton.text = timeFormatted(totalSeconds: counter)
+        timerButton.text = timeFormatted(counter)
     }
     
     func updateCounter() {
