@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct Task {
+struct Task     {
     
     var name: String
     var completionDates = [Date]()
