@@ -9,11 +9,7 @@
 import Foundation
 
 
-<<<<<<< HEAD
-struct Task {
-=======
 class Task: NSObject, NSCoding {
->>>>>>> origin/development
     
     var name: String
     var completionDates = [Date]()
