@@ -13,9 +13,9 @@ class PracticeViewController: UIViewController {
     
     @IBOutlet weak var timerButton: UILabel!
     @IBOutlet weak var startButton: UIButton!
-    
+    @IBOutlet weak var resetButton: UIButton!
     var task: Task?
-    private var counter = 1200
+    private var counter = 10 // 1200
     private var timer = Timer()
     
     override func viewDidLoad() {
@@ -60,6 +60,9 @@ class PracticeViewController: UIViewController {
         counter -= 1
         if counter < 0 {
             timer.invalidate()
+            startButton.setTitle("COMPLETED", for: .normal)
+            startButton.isEnabled = false
+            resetButton.isEnabled = false
             task?.completionDates.append(Date())
         } else {
             setLabelText()
@@ -68,17 +71,19 @@ class PracticeViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func startButtonPressed(_ sender: Any) {
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
-    }
-    
-    @IBAction func stopButtonPressed(_ sender: Any) {
-        timer.invalidate()
+        if startButton.currentTitle == "START"  {
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+            startButton.setTitle("PAUSE", for: .normal)
+        } else {
+            startButton.setTitle("START", for: .normal)
+            timer.invalidate()
+        }
+        
     }
     
     @IBAction func resetButtonPressed(_ sender: Any) {
         counter = 1200
         setLabelText()
-        
     }
 
 }
