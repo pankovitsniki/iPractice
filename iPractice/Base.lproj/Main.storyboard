@@ -180,24 +180,40 @@
             </objects>
             <point key="canvasLocation" x="-1779" y="0.0"/>
         </scene>
-        <!--View Controller-->
+        <!--Activity View Controller-->
         <scene sceneID="bc4-wi-yes">
             <objects>
-                <viewController id="mGF-AI-mfl" sceneMemberID="viewController">
+                <viewController id="mGF-AI-mfl" customClass="ActivityViewController" customModule="iPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Iw-OC-34N"/>
                         <viewControllerLayoutGuide type="bottom" id="rC0-0W-CVf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oqJ-qG-Qg2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LX7-Fi-3wK" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LX7-Fi-3wK" firstAttribute="leading" secondItem="oqJ-qG-Qg2" secondAttribute="leading" id="Cdw-Vb-sXB"/>
+                            <constraint firstAttribute="trailing" secondItem="LX7-Fi-3wK" secondAttribute="trailing" id="IX5-Tc-xcN"/>
+                            <constraint firstItem="LX7-Fi-3wK" firstAttribute="top" secondItem="0Iw-OC-34N" secondAttribute="bottom" id="U9b-Oj-V6k"/>
+                            <constraint firstItem="rC0-0W-CVf" firstAttribute="top" secondItem="LX7-Fi-3wK" secondAttribute="bottom" id="tsf-Oz-jLW"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="pq2-XK-zeW"/>
+                    <connections>
+                        <outlet property="barChartView" destination="LX7-Fi-3wK" id="H1G-ZX-LHd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssv-Ht-NeI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="54" y="323"/>
+            <point key="canvasLocation" x="53.600000000000001" y="322.48875562218893"/>
         </scene>
         <!--Practice-->
         <scene sceneID="nVW-KI-daz">
@@ -236,6 +252,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gU-lq-Z94" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-831" y="324"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wTh-dJ-VGb">
+            <objects>
+                <viewController id="UgB-F2-Xqa" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eun-9l-fid"/>
+                        <viewControllerLayoutGuide type="bottom" id="REx-nG-xJ8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Lt-GN-Xa7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5fF-xi-bnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

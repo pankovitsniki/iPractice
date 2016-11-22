@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		202F3F6D1DB83B0F00D3F1CB /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F3F6C1DB83B0F00D3F1CB /* TaskListTableViewController.swift */; };
-		202F3F8F1DB8670700D3F1CB /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F3F8E1DB8670700D3F1CB /* ActivityTableViewController.swift */; };
 		203959881DCD177B007554CD /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 203959871DCD177B007554CD /* data.plist */; };
 		2039598E1DCD366F007554CD /* AllTasksStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2039598D1DCD366F007554CD /* AllTasksStore.swift */; };
 		206575751DC018770071E227 /* AllTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206575741DC018770071E227 /* AllTasks.swift */; };
@@ -19,6 +18,7 @@
 		209B49921D6954F1006927EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209B49901D6954F1006927EA /* LaunchScreen.storyboard */; };
 		209B499D1D6954F2006927EA /* iPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B499C1D6954F2006927EA /* iPracticeTests.swift */; };
 		209B49A81D6954F2006927EA /* iPracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B49A71D6954F2006927EA /* iPracticeUITests.swift */; };
+		20A9E3041DE4EB34007B7738 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9E3031DE4EB34007B7738 /* ActivityViewController.swift */; };
 		20B71B3C1DB87E81003ED640 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B71B3B1DB87E81003ED640 /* AddTaskViewController.swift */; };
 		392729EEB865EE482B243217 /* Pods_iPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D355C8F7B7F43381DAF788A /* Pods_iPractice.framework */; };
 		546E63E8FE9204DCA06B16CB /* libPods-iPracticeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8819E1713B75BC1E3CA57910 /* libPods-iPracticeTests.a */; };
@@ -46,7 +46,6 @@
 		0D355C8F7B7F43381DAF788A /* Pods_iPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D89CB3F01EEC6E32F928F27 /* Pods-iPracticeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPracticeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iPracticeUITests/Pods-iPracticeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		202F3F6C1DB83B0F00D3F1CB /* TaskListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
-		202F3F8E1DB8670700D3F1CB /* ActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
 		203959871DCD177B007554CD /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		2039598D1DCD366F007554CD /* AllTasksStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTasksStore.swift; sourceTree = "<group>"; };
 		206575741DC018770071E227 /* AllTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTasks.swift; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 		209B49A71D6954F2006927EA /* iPracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPracticeUITests.swift; sourceTree = "<group>"; };
 		209B49A91D6954F2006927EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20A9E3021DE4C2B9007B7738 /* iPractice_Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iPractice_Bridging_Header.h; sourceTree = "<group>"; };
+		20A9E3031DE4EB34007B7738 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		20B71B3B1DB87E81003ED640 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		807B620DDDFF8C296D09BC82 /* Pods-iPracticeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPracticeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iPracticeTests/Pods-iPracticeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8819E1713B75BC1E3CA57910 /* libPods-iPracticeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iPracticeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,9 +132,9 @@
 				206575761DC02C2E0071E227 /* PracticeViewController.swift */,
 				202F3F6C1DB83B0F00D3F1CB /* TaskListTableViewController.swift */,
 				20B71B3B1DB87E81003ED640 /* AddTaskViewController.swift */,
+				20A9E3031DE4EB34007B7738 /* ActivityViewController.swift */,
 				2039598D1DCD366F007554CD /* AllTasksStore.swift */,
 				20A9E3021DE4C2B9007B7738 /* iPractice_Bridging_Header.h */,
-				202F3F8E1DB8670700D3F1CB /* ActivityTableViewController.swift */,
 				206575741DC018770071E227 /* AllTasks.swift */,
 				209B498B1D6954F1006927EA /* Main.storyboard */,
 				209B498E1D6954F1006927EA /* Assets.xcassets */,
@@ -457,9 +457,9 @@
 				202F3F6D1DB83B0F00D3F1CB /* TaskListTableViewController.swift in Sources */,
 				206575751DC018770071E227 /* AllTasks.swift in Sources */,
 				209B49881D6954F1006927EA /* AppDelegate.swift in Sources */,
+				20A9E3041DE4EB34007B7738 /* ActivityViewController.swift in Sources */,
 				206575771DC02C2E0071E227 /* PracticeViewController.swift in Sources */,
 				2039598E1DCD366F007554CD /* AllTasksStore.swift in Sources */,
-				202F3F8F1DB8670700D3F1CB /* ActivityTableViewController.swift in Sources */,
 				20B71B3C1DB87E81003ED640 /* AddTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
