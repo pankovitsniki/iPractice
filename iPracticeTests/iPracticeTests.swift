@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import iPractice
+// @testable import iPractice
 
 class iPracticeTests: XCTestCase {
     
