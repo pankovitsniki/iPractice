@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '157B1015C85FACBCA1DE9903BB032919'
-               BlueprintName = 'Pods-iPracticeTests'
+               BlueprintIdentifier = '33BE7178FD599CC8FAF16D1216BFBA2F'
+               BlueprintName = 'SVProgressHUD'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-iPracticeTests.a'>
+               BuildableName = 'SVProgressHUD.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

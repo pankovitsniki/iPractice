@@ -2,13 +2,16 @@ PODS:
   - Charts (3.0.1):
     - Charts/Core (= 3.0.1)
   - Charts/Core (3.0.1)
+  - SVProgressHUD (2.0.4)
 
 DEPENDENCIES:
   - Charts (~> 3.0.1)
+  - SVProgressHUD (~> 2.0.4)
 
 SPEC CHECKSUMS:
   Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
+  SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
 
-PODFILE CHECKSUM: 2ee1b94dcfe1789a0d4d842d74f869394e41f316
+PODFILE CHECKSUM: 23fc553296c5b899dfa6127eb31f45a958167f10
 
 COCOAPODS: 1.0.1

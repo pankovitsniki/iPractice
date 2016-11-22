@@ -6,6 +6,8 @@ target 'iPractice' do
     use_frameworks!
     
     # Pods for iPractice
+
+    pod 'SVProgressHUD', '~> 2.0.4'
     
     pod 'Charts', '~> 3.0.1'
 end

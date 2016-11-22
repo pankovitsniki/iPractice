@@ -63,6 +63,7 @@
 		209B49A31D6954F2006927EA /* iPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		209B49A71D6954F2006927EA /* iPracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPracticeUITests.swift; sourceTree = "<group>"; };
 		209B49A91D6954F2006927EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20A9E3021DE4C2B9007B7738 /* iPractice_Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iPractice_Bridging_Header.h; sourceTree = "<group>"; };
 		20B71B3B1DB87E81003ED640 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		807B620DDDFF8C296D09BC82 /* Pods-iPracticeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPracticeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iPracticeTests/Pods-iPracticeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8819E1713B75BC1E3CA57910 /* libPods-iPracticeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iPracticeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +133,7 @@
 				202F3F6C1DB83B0F00D3F1CB /* TaskListTableViewController.swift */,
 				20B71B3B1DB87E81003ED640 /* AddTaskViewController.swift */,
 				2039598D1DCD366F007554CD /* AllTasksStore.swift */,
+				20A9E3021DE4C2B9007B7738 /* iPractice_Bridging_Header.h */,
 				202F3F8E1DB8670700D3F1CB /* ActivityTableViewController.swift */,
 				206575741DC018770071E227 /* AllTasks.swift */,
 				209B498B1D6954F1006927EA /* Main.storyboard */,
@@ -618,6 +620,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikolettPankovits.iPractice.iPractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = iPractice/iPractice_Bridging_Header.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -632,6 +635,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikolettPankovits.iPractice.iPractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = iPractice/iPractice_Bridging_Header.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
