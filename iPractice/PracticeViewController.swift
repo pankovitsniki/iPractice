@@ -12,7 +12,7 @@ import AVFoundation
 
 class PracticeViewController: UIViewController {
     
-    @IBOutlet weak var timerButton: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     
@@ -24,7 +24,7 @@ class PracticeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        timerButton.text = timeFormatted(totalSeconds: counter)
+        timerLabel.text = timeFormatted(totalSeconds: counter)
         
     }
 
@@ -56,7 +56,7 @@ class PracticeViewController: UIViewController {
     }
     
     func setLabelText() {
-        timerButton.text = timeFormatted(totalSeconds: counter)
+        timerLabel.text = timeFormatted(totalSeconds: counter)
     }
     
     func updateCounter() {
@@ -64,7 +64,8 @@ class PracticeViewController: UIViewController {
         if counter < 0 {
             timer.invalidate()
             AudioServicesPlaySystemSound (systemSoundID)
-            startButton.setTitle("COMPLETED", for: .normal)
+            timerLabel.text = "COMPLETED"
+            timerLabel.textColor = UIColor.green
             startButton.isEnabled = false
             resetButton.isEnabled = false
             task?.completionDates.append(Date())

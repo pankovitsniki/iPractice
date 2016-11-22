@@ -68,23 +68,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="qnF-cD-X9B" userLabel="Timer">
-                                <rect key="frame" x="103.5" y="178.5" width="167.5" height="75.5"/>
+                                <rect key="frame" x="103.5" y="168" width="167.5" height="75.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="63"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dQ-5D-BCF">
-                                <rect key="frame" x="148.5" y="311" width="78" height="44"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="START">
-                                    <color key="titleColor" red="0.1058823529" green="0.1058823529" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dQ-5D-BCF">
+                                <rect key="frame" x="122.5" y="300.5" width="130" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                <state key="normal" title="START"/>
                                 <connections>
                                     <action selector="startButtonPressed:" destination="uOZ-ej-4EP" eventType="touchUpInside" id="dJh-t2-Wsa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qhn-cU-kQZ" userLabel="Reset">
-                                <rect key="frame" x="167.5" y="428" width="39" height="30"/>
+                                <rect key="frame" x="167.5" y="438.5" width="39" height="30"/>
                                 <state key="normal" title="Reset">
                                     <color key="titleColor" red="0.1058823529" green="0.1058823529" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -109,7 +107,7 @@
                     <connections>
                         <outlet property="resetButton" destination="Qhn-cU-kQZ" id="BOx-Nm-WQr"/>
                         <outlet property="startButton" destination="5dQ-5D-BCF" id="yuu-HV-n6X"/>
-                        <outlet property="timerButton" destination="qnF-cD-X9B" id="qwm-oi-xYX"/>
+                        <outlet property="timerLabel" destination="qnF-cD-X9B" id="kJp-16-THz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WsE-GS-BOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -182,65 +180,24 @@
             </objects>
             <point key="canvasLocation" x="-1779" y="0.0"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="OPq-pY-6eB">
+        <!--View Controller-->
+        <scene sceneID="bc4-wi-yes">
             <objects>
-                <tableViewController id="pWd-ng-kTQ" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="e6q-Tu-aV1">
+                <viewController id="mGF-AI-mfl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Iw-OC-34N"/>
+                        <viewControllerLayoutGuide type="bottom" id="rC0-0W-CVf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oqJ-qG-Qg2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCell" id="Kmn-iN-cRg">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kmn-iN-cRg" id="xMI-h7-uIi">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="pWd-ng-kTQ" id="CEe-Gg-P37"/>
-                            <outlet property="delegate" destination="pWd-ng-kTQ" id="VAy-ap-erA"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="7Gi-22-whi"/>
-                    <connections>
-                        <segue destination="87f-L0-a8Q" kind="presentation" id="YuG-gZ-SqY"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C9I-oK-jtq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pq2-XK-zeW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ssv-Ht-NeI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="324"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="cqW-hw-xkd">
-            <objects>
-                <tableViewController id="87f-L0-a8Q" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ced-Qk-dXy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Qzd-JX-dl2">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qzd-JX-dl2" id="1IM-dy-UNA">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="87f-L0-a8Q" id="N2d-Ro-k27"/>
-                            <outlet property="delegate" destination="87f-L0-a8Q" id="HUI-Ip-Iby"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ofY-ZP-ou4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="868" y="330"/>
+            <point key="canvasLocation" x="54" y="323"/>
         </scene>
         <!--Practice-->
         <scene sceneID="nVW-KI-daz">
@@ -273,7 +230,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="pWd-ng-kTQ" kind="relationship" relationship="rootViewController" id="I1W-X9-Ozn"/>
+                        <segue destination="mGF-AI-mfl" kind="relationship" relationship="rootViewController" id="BAK-t9-CPB"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gU-lq-Z94" userLabel="First Responder" sceneMemberID="firstResponder"/>
