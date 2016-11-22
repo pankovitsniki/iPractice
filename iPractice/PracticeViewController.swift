@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 
 class PracticeViewController: UIViewController {
@@ -14,9 +15,11 @@ class PracticeViewController: UIViewController {
     @IBOutlet weak var timerButton: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
+    
     var task: Task?
-    private var counter = 10 // 1200
+    private var counter = 3 // 1200
     private var timer = Timer()
+    let systemSoundID: SystemSoundID = 1325
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +63,7 @@ class PracticeViewController: UIViewController {
         counter -= 1
         if counter < 0 {
             timer.invalidate()
+            AudioServicesPlaySystemSound (systemSoundID)
             startButton.setTitle("COMPLETED", for: .normal)
             startButton.isEnabled = false
             resetButton.isEnabled = false
