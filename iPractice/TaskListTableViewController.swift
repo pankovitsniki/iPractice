@@ -20,7 +20,7 @@ class TaskListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +39,7 @@ class TaskListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
         
         cell.textLabel!.text = AllTasks.shared.list[indexPath.row].name
+        cell.textLabel?.textColor = UIColor.white
         
         return cell
     }

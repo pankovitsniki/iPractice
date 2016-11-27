@@ -13,10 +13,14 @@
         <scene sceneID="QAA-5D-hMU">
             <objects>
                 <tableViewController id="VGN-68-wt2" customClass="TaskListTableViewController" customModule="iPractice" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="J43-TX-SEP">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="J43-TX-SEP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1764705882" green="0.3411764706" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.55095097179999997" green="0.76241775779999998" blue="0.96280048080000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexColor" red="0.55095097179999997" green="0.76241775779999998" blue="0.96280048080000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.1764705882352941" green="0.3411764705882353" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.55095097179999997" green="0.76241775779999998" blue="0.96280048080000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskCell" id="PeG-1w-zHq">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -24,7 +28,11 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" tableViewCell="PeG-1w-zHq" id="hPv-DG-NHl">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" red="0.1764705882" green="0.3411764706" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="tintColor" red="0.1764705882" green="0.3411764706" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.1764705882" green="0.3411764706" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.55095097179999997" green="0.76241775779999998" blue="0.96280048080000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="uOZ-ej-4EP" kind="show" identifier="startPractice" id="wC9-vR-MTq"/>
                                 </connections>
@@ -37,11 +45,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="1PQ-c3-rJ6">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="qD2-2p-NQc">
+                            <color key="tintColor" red="0.1764705882" green="0.3411764706" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="editButtonPressed:" destination="VGN-68-wt2" id="fxO-JK-KAR"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="T77-vm-qrE">
+                            <color key="tintColor" red="0.1764705882" green="0.3411764706" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="UYt-WM-HvP" kind="presentation" identifier="addTask" id="bdi-Zb-1hy"/>
                             </connections>
@@ -70,7 +80,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="qnF-cD-X9B" userLabel="Timer">
                                 <rect key="frame" x="103.5" y="168" width="167.5" height="75.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="63"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dQ-5D-BCF">
@@ -82,16 +92,18 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qhn-cU-kQZ" userLabel="Reset">
-                                <rect key="frame" x="167.5" y="438.5" width="39" height="30"/>
+                                <rect key="frame" x="161.5" y="438.5" width="51" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Reset">
-                                    <color key="titleColor" red="0.1058823529" green="0.1058823529" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.55095097179999997" green="0.76241775779999998" blue="0.96280048080000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="resetButtonPressed:" destination="uOZ-ej-4EP" eventType="touchUpInside" id="A0w-h3-SZE"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1764705882352941" green="0.3411764705882353" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.55095097179999997" green="0.76241775779999998" blue="0.96280048080000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="qnF-cD-X9B" firstAttribute="centerX" secondItem="UaH-fK-QZa" secondAttribute="centerX" id="0c5-A1-erK"/>
                             <constraint firstItem="5dQ-5D-BCF" firstAttribute="top" secondItem="qnF-cD-X9B" secondAttribute="bottom" constant="57" id="261-O7-tw3"/>
@@ -129,13 +141,15 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a task..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8gb-5W-hk4">
                                 <rect key="frame" x="16" y="111" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.15358297409999999" green="0.23922413789999999" blue="0.54620150860000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8aK-po-JQ7">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.1764705882" green="0.3411764706" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Add task" id="17d-Tc-erI">
                                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="V32-Rd-y2R">
@@ -152,7 +166,8 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1764705882" green="0.3411764706" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.55095097179999997" green="0.76241775779999998" blue="0.96280048080000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="taskNameTextField" destination="8gb-5W-hk4" id="FkT-6p-P8K"/>
@@ -194,10 +209,11 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LX7-Fi-3wK" customClass="BarChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.1764705882" green="0.3411764706" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1764705882" green="0.3411764706" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.55095097179999997" green="0.76241775779999998" blue="0.96280048080000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="LX7-Fi-3wK" firstAttribute="leading" secondItem="oqJ-qG-Qg2" secondAttribute="leading" id="Cdw-Vb-sXB"/>
                             <constraint firstAttribute="trailing" secondItem="LX7-Fi-3wK" secondAttribute="trailing" id="IX5-Tc-xcN"/>

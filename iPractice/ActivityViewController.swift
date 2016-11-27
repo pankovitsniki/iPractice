@@ -29,15 +29,16 @@ class ActivityViewController: UIViewController {
         
         var values = [Int]()
         
-//        months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        // format xAxis for month
+        let monthFormat:BarChartFormatter = BarChartFormatter()
+        let xaxis:XAxis = XAxis()
         
-//        let chartData = BarChartData(xVals: months, dataSet: dataSet)
-//        barChartView.data = chartData
         
         // initialize month data to 12 zeros
         for _ in 0..<12 {
             values.append(0)
         }
+        
         
         // read completion dates of tasks and update the values at the correct month
         for task in AllTasks.shared.list {
@@ -54,14 +55,42 @@ class ActivityViewController: UIViewController {
             entries.append(BarChartDataEntry(x: Double(i), y: Double(value)))
         }
         
-        dataSet = BarChartDataSet(values: entries, label: "One completed task")
+        
+        
+        dataSet = BarChartDataSet(values: entries, label: "Completed tasks")
         
         let data = BarChartData(dataSet: dataSet)
-        barChartView.backgroundColor = UIColor.red
+        
+//        barChartView.backgroundColor = UIColor(red: 0.1765, green: 0.3412, blue: 0.7686, alpha: 1.0)
         barChartView.leftAxis.axisMinimum = 0.0
         barChartView.rightAxis.axisMinimum = 0.0
         barChartView.data = data
+        barChartView.chartDescription?.text = ""
+        barChartView.xAxis.labelPosition = .bottom
+        barChartView.xAxis.labelTextColor = UIColor.white
+        barChartView.xAxis.decimals = 0
+        barChartView.barData?.setValueTextColor(UIColor.white)
+        barChartView.tintColor = UIColor.white
+        
+
+        
+        
+        // month format on X
+        xaxis.valueFormatter = monthFormat
+        barChartView.xAxis.valueFormatter = xaxis.valueFormatter
+
+        
     }
     
+    public class BarChartFormatter: NSObject, IAxisValueFormatter{
+        
+        var months: [String]! = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        
+        
+        public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+            
+            return months[Int(value)]
+        }
+    }
 }
 
