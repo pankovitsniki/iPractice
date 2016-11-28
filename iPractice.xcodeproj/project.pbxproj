@@ -12,6 +12,7 @@
 		2039598E1DCD366F007554CD /* AllTasksStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2039598D1DCD366F007554CD /* AllTasksStore.swift */; };
 		206575751DC018770071E227 /* AllTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206575741DC018770071E227 /* AllTasks.swift */; };
 		206575771DC02C2E0071E227 /* PracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206575761DC02C2E0071E227 /* PracticeViewController.swift */; };
+		207A4A541DECB4A3001A20D3 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A4A531DECB4A3001A20D3 /* ColorExtensions.swift */; };
 		209B49881D6954F1006927EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B49871D6954F1006927EA /* AppDelegate.swift */; };
 		209B498D1D6954F1006927EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209B498B1D6954F1006927EA /* Main.storyboard */; };
 		209B498F1D6954F1006927EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 209B498E1D6954F1006927EA /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		2039598D1DCD366F007554CD /* AllTasksStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTasksStore.swift; sourceTree = "<group>"; };
 		206575741DC018770071E227 /* AllTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTasks.swift; sourceTree = "<group>"; };
 		206575761DC02C2E0071E227 /* PracticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PracticeViewController.swift; sourceTree = "<group>"; };
+		207A4A531DECB4A3001A20D3 /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		209B49841D6954F1006927EA /* iPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		209B49871D6954F1006927EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		209B498C1D6954F1006927EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				20A9E3031DE4EB34007B7738 /* ActivityViewController.swift */,
 				2039598D1DCD366F007554CD /* AllTasksStore.swift */,
 				20A9E3021DE4C2B9007B7738 /* iPractice_Bridging_Header.h */,
+				207A4A531DECB4A3001A20D3 /* ColorExtensions.swift */,
 				206575741DC018770071E227 /* AllTasks.swift */,
 				20A9E3051DE4FDE8007B7738 /* DateExtension.swift */,
 				209B498B1D6954F1006927EA /* Main.storyboard */,
@@ -462,6 +465,7 @@
 				206575751DC018770071E227 /* AllTasks.swift in Sources */,
 				209B49881D6954F1006927EA /* AppDelegate.swift in Sources */,
 				20A9E3041DE4EB34007B7738 /* ActivityViewController.swift in Sources */,
+				207A4A541DECB4A3001A20D3 /* ColorExtensions.swift in Sources */,
 				206575771DC02C2E0071E227 /* PracticeViewController.swift in Sources */,
 				2039598E1DCD366F007554CD /* AllTasksStore.swift in Sources */,
 				20B71B3C1DB87E81003ED640 /* AddTaskViewController.swift in Sources */,

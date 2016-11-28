@@ -12,7 +12,11 @@ import AVFoundation
 
 class PracticeViewController: UIViewController {
     
-    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var timerLabel: UILabel! {
+        didSet {
+            timerLabel.textColor = UIColor.foreground
+        }
+    }
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     

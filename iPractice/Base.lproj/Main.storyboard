@@ -80,7 +80,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="qnF-cD-X9B" userLabel="Timer">
                                 <rect key="frame" x="103.5" y="168" width="167.5" height="75.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="63"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dQ-5D-BCF">
@@ -103,7 +103,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1764705882352941" green="0.3411764705882353" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" red="0.55095097179999997" green="0.76241775779999998" blue="0.96280048080000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.5490196078431373" green="0.76078431372549016" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="qnF-cD-X9B" firstAttribute="centerX" secondItem="UaH-fK-QZa" secondAttribute="centerX" id="0c5-A1-erK"/>
                             <constraint firstItem="5dQ-5D-BCF" firstAttribute="top" secondItem="qnF-cD-X9B" secondAttribute="bottom" constant="57" id="261-O7-tw3"/>
