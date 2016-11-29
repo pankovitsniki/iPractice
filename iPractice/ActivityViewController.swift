@@ -25,6 +25,8 @@ class ActivityViewController: UIViewController {
     
     func updateChart() {
         
+        barChartView.noDataText = "You haven't finished any tasks"
+        
         var dataSets = [BarChartDataSet]()
 
         var maxValue = 0
@@ -55,28 +57,28 @@ class ActivityViewController: UIViewController {
             }
             
             let charDataSet = BarChartDataSet(values: entries, label: task.name)
-            charDataSet.colors = [UIColor.randomColor(seed: task.name)]
+            charDataSet.colors = [UIColor.randomColor(seed: task.name).withAlphaComponent(0.4)]
             
             dataSets.append(charDataSet)
         }
 
         let data = BarChartData(dataSets: dataSets)
+        
 
 //        data.groupWidth(groupSpace: barChartView.xAxis.axisMaximum / 12.0, barSpace: 0.03)
-        data.barWidth = 0.167
-        data.groupBars(fromX: 0, groupSpace: 0.2, barSpace: 0.03)
+//        data.barWidth = 0.167
+//        data.groupBars(fromX: 0, groupSpace: 0.2, barSpace: 0.03)
 
         //        barChartView.backgroundColor = UIColor(red: 0.1765, green: 0.3412, blue: 0.7686, alpha: 1.0)
         
         barChartView.data = data
         
 //        barChartView.groupBars(fromX: 0, groupSpace: data.groupWidth(groupSpace: barChartView.xAxis.axisMaximum / 12.0, barSpace: 0.03), barSpace: 0.03)
-        
-        barChartView.rightAxis.drawGridLinesEnabled = false
-        barChartView.rightAxis.drawAxisLineEnabled = false
-        barChartView.rightAxis.drawLabelsEnabled = false
+//        barChartView.rightAxis.drawGridLinesEnabled = false
+//        barChartView.xAxis.decimals = 0
 
         
+        // set y axis
         barChartView.leftAxis.axisMinimum = 0
         barChartView.rightAxis.axisMinimum = 0
         barChartView.leftAxis.axisMaximum = Double(maxValue + 2)
@@ -85,22 +87,34 @@ class ActivityViewController: UIViewController {
         barChartView.rightAxis.labelTextColor = UIColor.barChartMain
         barChartView.leftAxis.axisLineColor = UIColor.barChartMain
         barChartView.rightAxis.axisLineColor = UIColor.barChartMain
-        barChartView.xAxis.decimals = 0
 
-        barChartView.chartDescription?.text = ""
+        // set chart description
+        barChartView.chartDescription?.text = "Completed Tasks"
+        barChartView.chartDescription?.textColor = UIColor.barChartMain
+        barChartView.chartDescription?.position = CGPoint(x: Double(barChartView.frame.width)/2.0, y: Double(maxValue))
+        barChartView.chartDescription?.textAlign = NSTextAlignment.center
+        barChartView.chartDescription?.font = NSUIFont.systemFont(ofSize: 25.0)
+        
+        // set labels
         barChartView.xAxis.labelPosition = .bottom
         barChartView.xAxis.labelTextColor = UIColor.barChartMain
         barChartView.barData?.setValueTextColor(UIColor.barChartMain)
-        barChartView.tintColor = UIColor.white
+        barChartView.tintColor = UIColor.barChartMain
         barChartView.xAxis.axisLineColor = UIColor.barChartMain
         barChartView.xAxis.gridColor = UIColor.barChartMain
         barChartView.gridBackgroundColor = UIColor.barChartMain
         barChartView.xAxis.drawGridLinesEnabled = false
         barChartView.xAxis.labelCount = 12
+
+        // format values to decimal
+        let format = NumberFormatter()
+        format.numberStyle = .decimal
+        let formatter = DefaultValueFormatter(formatter: format)
+        barChartView.barData?.setValueFormatter(formatter)
+        
         
         // format xAxis for month
         barChartView.xAxis.valueFormatter = BarChartFormatter()
-        
         barChartView.animate(yAxisDuration: 1.5, easingOption: .easeInOutQuart)
         
         
@@ -109,7 +123,6 @@ class ActivityViewController: UIViewController {
     public class BarChartFormatter: NSObject, IAxisValueFormatter{
         
         let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        
         
         public func stringForValue(_ value: Double, axis: AxisBase?) -> String {
             
