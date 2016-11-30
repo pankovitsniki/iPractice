@@ -47,7 +47,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="qD2-2p-NQc">
                             <color key="tintColor" red="0.1764705882" green="0.3411764706" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="editButtonPressed:" destination="VGN-68-wt2" id="fxO-JK-KAR"/>
+                                <action selector="editButtonPressed:" destination="VGN-68-wt2" id="Alx-G1-mrW"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="T77-vm-qrE">
@@ -68,7 +68,7 @@
         <!--Practice View Controller-->
         <scene sceneID="q6a-4E-hsw">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="uOZ-ej-4EP" customClass="PracticeViewController" customModule="iPractice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uOZ-ej-4EP" customClass="PracticeViewController" customModule="iPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eQx-Y8-7MQ"/>
                         <viewControllerLayoutGuide type="bottom" id="qIK-7l-Qzy"/>
@@ -205,12 +205,12 @@
                         <viewControllerLayoutGuide type="top" id="0Iw-OC-34N"/>
                         <viewControllerLayoutGuide type="bottom" id="rC0-0W-CVf"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="oqJ-qG-Qg2">
+                    <view key="view" contentMode="scaleToFill" id="oqJ-qG-Qg2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LX7-Fi-3wK" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="64" width="375" height="505"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" red="0.1764705882" green="0.3411764706" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>

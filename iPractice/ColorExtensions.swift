@@ -21,7 +21,7 @@ extension UIColor {
     
     class func randomColor(seed: String) -> UIColor {
         
-        var total: Int = 0
+        var total: Int = 20
         for u in seed.unicodeScalars {
             total += Int(UInt32(u))
         }

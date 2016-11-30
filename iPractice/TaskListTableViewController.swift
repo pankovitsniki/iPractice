@@ -13,7 +13,7 @@ class TaskListTableViewController: UITableViewController {
     
     @IBOutlet var taskListTable: UITableView!
     @IBAction func editButtonPressed(_ sender: AnyObject) {
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        tableView.setEditing(!tableView.isEditing, animated: true)
     }
     
     let name = "name"
@@ -21,6 +21,7 @@ class TaskListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,7 +64,11 @@ class TaskListTableViewController: UITableViewController {
             AllTasks.shared.list.insert(AllTasks.shared.list[fromIndexPath.row], at: to.row + 1)
             AllTasks.shared.list.remove(at: fromIndexPath.row)
         }
-        
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.setEditing(editing, animated: animated)
     }
     
     // MARK: - Navigation
