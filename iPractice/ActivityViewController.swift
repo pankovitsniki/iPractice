@@ -35,26 +35,30 @@ class ActivityViewController: UIViewController, ChartViewDelegate {
         
         var dataSets = [BarChartDataSet]()
         
-        var maxValue = 0 // TODO:
+        var maxValue = 0.0
         
         var entries: [ChartDataEntry] = Array()
         
         var labels = [String]()
         var colors = [UIColor]()
         
+        // initialize month data to 12 zeros
         for i in 0..<12 {
             var values = [Double]()
             for task in AllTasks.shared.list {
                 labels.append(task.name)
                 colors.append(UIColor.randomColor(seed: task.name))
-                var countOfCompletions = 0
+                var countOfCompletions = 0.0
                 for complDate in task.completionDates {
-                    let month = Int(complDate.month)
+                    let month = Int(complDate.month) - 1
                     if month == i {
                         countOfCompletions += 1
                     }
                 }
-                values.append(Double(countOfCompletions))
+                if countOfCompletions > maxValue {
+                    maxValue = countOfCompletions
+                }
+                values.append(countOfCompletions)
             }
             
             let result = BarChartDataEntry(x: Double(i), yValues: values, label: "boo")
