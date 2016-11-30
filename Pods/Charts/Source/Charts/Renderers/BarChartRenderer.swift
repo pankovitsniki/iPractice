@@ -77,7 +77,7 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
             else { return }
         
         let barWidthHalf = barData.barWidth / 2.0
-        
+    
         let buffer = _buffers[index]
         var bufferIndex = 0
         let containsStacks = dataSet.isStacked
@@ -326,11 +326,11 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
     
     open func prepareBarHighlight(
         x: Double,
-        y1: Double,
-        y2: Double,
-        barWidthHalf: Double,
-        trans: Transformer,
-        rect: inout CGRect)
+          y1: Double,
+          y2: Double,
+          barWidthHalf: Double,
+          trans: Transformer,
+          rect: inout CGRect)
     {
         let left = x - barWidthHalf
         let right = x + barWidthHalf
@@ -344,7 +344,7 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
         
         trans.rectValueToPixel(&rect, phaseY: animator?.phaseY ?? 1.0)
     }
-    
+
     open override func drawValues(context: CGContext)
     {
         // if values are drawn
@@ -358,7 +358,7 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                 else { return }
             
             var dataSets = barData.dataSets
-            
+
             let valueOffsetPlus: CGFloat = 4.5
             var posOffset: CGFloat
             var negOffset: CGFloat
@@ -394,7 +394,7 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                 let trans = dataProvider.getTransformer(forAxis: dataSet.axisDependency)
                 
                 let phaseY = animator.phaseY
-                
+        
                 // if only single values are drawn (sum)
                 if !dataSet.isStacked
                 {
@@ -536,39 +536,6 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                                     font: valueFont,
                                     align: .center,
                                     color: dataSet.valueTextColorAt(index))
-                                
-                                // Check that value won't write on top of another value above the bar
-                                if drawValueAboveBar && k > 0 && vals[k - 1] != 0 &&
-                                    ((transformed[k - 1].y - transformed[k].y + posOffset) < 0)
-                                {
-                                    continue
-                                }
-                                // Ensure that the value is contained within the bar
-                                if !drawValueAboveBar {
-                                    if k > 0 {
-                                        if ((transformed[k - 1].y - transformed[k].y) + negOffset) < 0 {
-                                            continue
-                                        }
-                                    } else {
-                                        if (transformed[k].y + negOffset) < 0 {
-                                            continue
-                                        }
-                                    }
-                                }
-                                if vals[k] != 0 {
-                                    drawValue(
-                                        context: context,
-                                        value: formatter.stringForValue(
-                                            vals[k],
-                                            entry: e,
-                                            dataSetIndex: dataSetIndex,
-                                            viewPortHandler: viewPortHandler),
-                                        xPos: x,
-                                        yPos: y,
-                                        font: valueFont,
-                                        align: .center,
-                                        color: dataSet.valueTextColorAt(index))
-                                }
                             }
                         }
                         
