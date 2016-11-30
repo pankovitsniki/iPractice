@@ -57,9 +57,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="taskListTable" destination="J43-TX-SEP" id="25q-sA-COG"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YH6-bC-nnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

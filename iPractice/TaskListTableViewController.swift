@@ -11,35 +11,30 @@ import UIKit
 
 class TaskListTableViewController: UITableViewController {
     
-    @IBOutlet var taskListTable: UITableView!
     @IBAction func editButtonPressed(_ sender: AnyObject) {
         tableView.setEditing(!tableView.isEditing, animated: true)
     }
-    
-    let name = "name"
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        navigationItem.leftBarButtonItem = editButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        taskListTable.reloadData()
+        tableView.reloadData()
     }
-    
     
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return AllTasks.shared.list.count
     }
     
     override func tableView(_ tableView:UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
         
-        cell.textLabel!.text = AllTasks.shared.list[indexPath.row].name
+        cell.textLabel?.text = AllTasks.shared.list[indexPath.row].name
         cell.textLabel?.textColor = UIColor.white
         
         return cell
@@ -50,7 +45,7 @@ class TaskListTableViewController: UITableViewController {
         
         if (editingStyle == .delete) {
             AllTasks.shared.list.remove(at: indexPath.row)
-            taskListTable.reloadData()
+            tableView.reloadData()
         }
     }
     
@@ -66,11 +61,6 @@ class TaskListTableViewController: UITableViewController {
         }
     }
     
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: animated)
-        tableView.setEditing(editing, animated: animated)
-    }
-    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -78,11 +68,10 @@ class TaskListTableViewController: UITableViewController {
         if segue.identifier == "startPractice" {
             // we should prepare our PracticeViewController
             if let pvc = segue.destination as? PracticeViewController {
-                if let indexPath = self.tableView.indexPath(for: sender as! UITableViewCell) {
+                if let indexPath = tableView.indexPath(for: sender as! UITableViewCell) {
                     pvc.task = AllTasks.shared.list[indexPath.row]
                 }
             }
-            
         }
     }
     

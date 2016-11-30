@@ -27,14 +27,7 @@ class PracticeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         timerLabel.text = timeFormatted(totalSeconds: counter)
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,16 +37,6 @@ class PracticeViewController: UIViewController {
         startButton.tintColor = UIColor.tint
 
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func timeFormatted(totalSeconds: Int) -> String {
         let seconds: Int = totalSeconds % 60

@@ -35,52 +35,77 @@ class ActivityViewController: UIViewController, ChartViewDelegate {
         
         var dataSets = [BarChartDataSet]()
         
-        var maxValue = 0
+        var maxValue = 0 // TODO:
         
-        for task in AllTasks.shared.list {
-            
-            var values = [Int]()
-            
-            // initialize month data to 12 zeros
-            for _ in 0..<12 {
-                values.append(0)
-            }
-            
-            // read completion dates of tasks and update the values at the correct month
-            for complDate in task.completionDates {
-                let month = Int(complDate.month) - 1
-                values[month] = values[month] + 1
-                if values[month] > maxValue {
-                    maxValue = values[month]
+        var entries: [ChartDataEntry] = Array()
+        
+        var labels = [String]()
+        var colors = [UIColor]()
+        
+        for i in 0..<12 {
+            var values = [Double]()
+            for task in AllTasks.shared.list {
+                labels.append(task.name)
+                colors.append(UIColor.randomColor(seed: task.name))
+                var countOfCompletions = 0
+                for complDate in task.completionDates {
+                    let month = Int(complDate.month)
+                    if month == i {
+                        countOfCompletions += 1
+                    }
                 }
+                values.append(Double(countOfCompletions))
             }
             
-            // convert data for the Chart
-            var entries: [ChartDataEntry] = Array()
+            let result = BarChartDataEntry(x: Double(i), yValues: values, label: "boo")
             
-            for (i, value) in values.enumerated() {
-                entries.append(BarChartDataEntry(x: Double(i), y: Double(value)))
-            }
-            
-            let charDataSet = BarChartDataSet(values: entries, label: task.name)
-            charDataSet.colors = [UIColor.randomColor(seed: task.name).withAlphaComponent(0.4)]
-            dataSets.append(charDataSet)
+            entries.append(result)
         }
+        let charDataSet = BarChartDataSet(values: entries, label: "")
+        charDataSet.stackLabels = labels
+        charDataSet.colors = colors
+        dataSets.append(charDataSet)
+        
+        
+        /*
+         
+         
+         for task in AllTasks.shared.list {
+         
+         var values = [Int]()
+         
+         // initialize month data to 12 zeros
+         for _ in 0..<12 {
+         values.append(0)
+         }
+         
+         // read completion dates of tasks and update the values at the correct month
+         for complDate in task.completionDates {
+         let month = Int(complDate.month) - 1
+         values[month] = values[month] + 1
+         if values[month] > maxValue {
+         maxValue = values[month]
+         }
+         }
+         
+         // convert data for the Chart
+         var entries: [ChartDataEntry] = Array()
+         
+         for (i, value) in values.enumerated() {
+         entries.append(BarChartDataEntry(x: Double(i), y: Double(value)))
+         }
+         
+         let charDataSet = BarChartDataSet(values: entries, label: task.name)
+         charDataSet.colors = [UIColor.randomColor(seed: task.name).withAlphaComponent(0.4)]
+         dataSets.append(charDataSet)
+         }
+         */
         
         let data = BarChartData(dataSets: dataSets)
-        
-        
-        //        data.groupWidth(groupSpace: barChartView.xAxis.axisMaximum / 12.0, barSpace: 0.03)
-        //        data.barWidth = 0.167
-        //        data.groupBars(fromX: 0, groupSpace: 0.2, barSpace: 0.03)
         
         //        barChartView.backgroundColor = UIColor(red: 0.1765, green: 0.3412, blue: 0.7686, alpha: 1.0)
         
         barChartView.data = data
-        
-        //        barChartView.groupBars(fromX: 0, groupSpace: data.groupWidth(groupSpace: barChartView.xAxis.axisMaximum / 12.0, barSpace: 0.03), barSpace: 0.03)
-        //        barChartView.rightAxis.drawGridLinesEnabled = false
-        //        barChartView.xAxis.decimals = 0
         
         if (maxValue < 6) {
             // workaround for issue where y axis would show float values for low maxValue
@@ -138,6 +163,11 @@ class ActivityViewController: UIViewController, ChartViewDelegate {
     //    func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: Highlight) {
     //        print("\(entry.description)")
     //    }
+    
+    //        data.groupWidth(groupSpace: barChartView.xAxis.axisMaximum / 12.0, barSpace: 0.03)
+    //        data.barWidth = 0.167
+    //        data.groupBars(fromX: 0, groupSpace: 0.2, barSpace: 0.03)
+    
     
 }
 
