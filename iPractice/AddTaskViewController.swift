@@ -30,9 +30,6 @@ class AddTaskViewController: UIViewController {
             
             //dismiss keyboard and reset fields
             dismiss(animated: true, completion: nil)
-        
         }
-        
     }
-
 }

@@ -35,7 +35,6 @@ class PracticeViewController: UIViewController {
         
         title = task?.name
         startButton.tintColor = UIColor.tint
-
     }
     
     func timeFormatted(totalSeconds: Int) -> String {
@@ -72,12 +71,10 @@ class PracticeViewController: UIViewController {
             startButton.setTitle("START", for: .normal)
             timer.invalidate()
         }
-        
     }
     
     @IBAction func resetButtonPressed(_ sender: Any) {
         counter = 1200
         setLabelText()
     }
-
 }

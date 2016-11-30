@@ -9,7 +9,7 @@
 import Foundation
 import Charts
 
-class ActivityViewController: UIViewController, ChartViewDelegate {
+class ActivityViewController: UIViewController {
     
     @IBOutlet weak var barChartView: BarChartView! {
         didSet {
@@ -18,10 +18,7 @@ class ActivityViewController: UIViewController, ChartViewDelegate {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        barChartView.delegate = self
-        navigationItem.titleView?.tintColor = UIColor.red
-        
+        super.viewDidLoad()        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -30,11 +27,14 @@ class ActivityViewController: UIViewController, ChartViewDelegate {
     }
     
     func updateChart() {
-        
-        barChartView.noDataText = "You haven't finished any tasks"
-        
-        var dataSets = [BarChartDataSet]()
-        
+
+        if AllTasks.shared.list.isEmpty {
+            barChartView.noDataText = "You haven't finished any tasks. Let's start one now ;)"
+            barChartView.noDataTextColor = UIColor.foreground
+            barChartView.noDataFont = UIFont.boldSystemFont(ofSize: 20)
+            return
+        }
+
         var maxValue = 0.0
         
         var entries: [ChartDataEntry] = Array()
@@ -74,12 +74,12 @@ class ActivityViewController: UIViewController, ChartViewDelegate {
         }
         
         // create data sets
-        let charDataSet = BarChartDataSet(values: entries, label: "")
+        
+        let charDataSet = BarChartDataSet(values: entries, label: nil)
         charDataSet.stackLabels = labels
         charDataSet.colors = colors
-        dataSets.append(charDataSet)
         
-        let data = BarChartData(dataSets: dataSets)
+        let data = BarChartData(dataSet: charDataSet)
         
         barChartView.data = data
         
@@ -116,9 +116,6 @@ class ActivityViewController: UIViewController, ChartViewDelegate {
         // format xAxis for month
         barChartView.xAxis.valueFormatter = BarChartFormatter()
         barChartView.animate(yAxisDuration: 1.5, easingOption: .easeInOutQuart)
-        
-        
-        
     }
     
     public class BarChartFormatter: NSObject, IAxisValueFormatter{
@@ -130,6 +127,5 @@ class ActivityViewController: UIViewController, ChartViewDelegate {
             return months[Int(value)]
         }
     }
-    
 }
 

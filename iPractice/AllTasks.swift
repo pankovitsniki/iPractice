@@ -67,6 +67,5 @@ class AllTasks: NSObject {
         let dataFilePath = docsDir.appendingPathComponent("data.archive")
         
         NSKeyedArchiver.archiveRootObject(list, toFile: dataFilePath)
-        
     }
 }
