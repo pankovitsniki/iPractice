@@ -42,7 +42,7 @@ class ActivityViewController: UIViewController, ChartViewDelegate {
         var labels = [String]()
         var colors = [UIColor]()
         
-        // initialize month data to 12 zeros
+        // initialize month data and iterate through the saved tasks to create chart
         for i in 0..<12 {
             var values = [Double]()
             for task in AllTasks.shared.list {
@@ -55,59 +55,26 @@ class ActivityViewController: UIViewController, ChartViewDelegate {
                         countOfCompletions += 1
                     }
                 }
-                if countOfCompletions > maxValue {
-                    maxValue = countOfCompletions
-                }
                 values.append(countOfCompletions)
             }
             
-            let result = BarChartDataEntry(x: Double(i), yValues: values, label: "boo")
+            let sum = values.reduce(0, +)
+            if (sum > maxValue) {
+                maxValue = sum + 1
+            }
+
+            let result = BarChartDataEntry(x: Double(i), yValues: values)
             
             entries.append(result)
         }
+        
         let charDataSet = BarChartDataSet(values: entries, label: "")
         charDataSet.stackLabels = labels
         charDataSet.colors = colors
         dataSets.append(charDataSet)
         
         
-        /*
-         
-         
-         for task in AllTasks.shared.list {
-         
-         var values = [Int]()
-         
-         // initialize month data to 12 zeros
-         for _ in 0..<12 {
-         values.append(0)
-         }
-         
-         // read completion dates of tasks and update the values at the correct month
-         for complDate in task.completionDates {
-         let month = Int(complDate.month) - 1
-         values[month] = values[month] + 1
-         if values[month] > maxValue {
-         maxValue = values[month]
-         }
-         }
-         
-         // convert data for the Chart
-         var entries: [ChartDataEntry] = Array()
-         
-         for (i, value) in values.enumerated() {
-         entries.append(BarChartDataEntry(x: Double(i), y: Double(value)))
-         }
-         
-         let charDataSet = BarChartDataSet(values: entries, label: task.name)
-         charDataSet.colors = [UIColor.randomColor(seed: task.name).withAlphaComponent(0.4)]
-         dataSets.append(charDataSet)
-         }
-         */
-        
         let data = BarChartData(dataSets: dataSets)
-        
-        //        barChartView.backgroundColor = UIColor(red: 0.1765, green: 0.3412, blue: 0.7686, alpha: 1.0)
         
         barChartView.data = data
         
@@ -163,15 +130,6 @@ class ActivityViewController: UIViewController, ChartViewDelegate {
             return months[Int(value)]
         }
     }
-    
-    //    func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: Highlight) {
-    //        print("\(entry.description)")
-    //    }
-    
-    //        data.groupWidth(groupSpace: barChartView.xAxis.axisMaximum / 12.0, barSpace: 0.03)
-    //        data.barWidth = 0.167
-    //        data.groupBars(fromX: 0, groupSpace: 0.2, barSpace: 0.03)
-    
     
 }
 
