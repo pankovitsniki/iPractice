@@ -19,6 +19,7 @@ class ActivityViewController: UIViewController {
     
     override func viewDidLoad() {
         navigationItem.titleView?.tintColor = UIColor.red
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -31,6 +32,8 @@ class ActivityViewController: UIViewController {
         barChartView.noDataText = "You haven't finished any tasks"
         
         var dataSets = [BarChartDataSet]()
+        
+        var stackCount = 0
 
         var maxValue = 0
         
@@ -61,13 +64,15 @@ class ActivityViewController: UIViewController {
             
             let charDataSet = BarChartDataSet(values: entries, label: task.name)
             charDataSet.colors = [UIColor.randomColor(seed: task.name).withAlphaComponent(0.4)]
-            
             dataSets.append(charDataSet)
+            stackCount += 1
         }
 
         let data = BarChartData(dataSets: dataSets)
         
 
+        
+        
 //        data.groupWidth(groupSpace: barChartView.xAxis.axisMaximum / 12.0, barSpace: 0.03)
 //        data.barWidth = 0.167
 //        data.groupBars(fromX: 0, groupSpace: 0.2, barSpace: 0.03)
