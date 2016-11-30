@@ -33,8 +33,6 @@ class ActivityViewController: UIViewController {
         
         var dataSets = [BarChartDataSet]()
         
-        var stackCount = 0
-
         var maxValue = 0
         
         for task in AllTasks.shared.list {
@@ -65,7 +63,6 @@ class ActivityViewController: UIViewController {
             let charDataSet = BarChartDataSet(values: entries, label: task.name)
             charDataSet.colors = [UIColor.randomColor(seed: task.name).withAlphaComponent(0.4)]
             dataSets.append(charDataSet)
-            stackCount += 1
         }
 
         let data = BarChartData(dataSets: dataSets)
@@ -84,7 +81,7 @@ class ActivityViewController: UIViewController {
 //        barChartView.groupBars(fromX: 0, groupSpace: data.groupWidth(groupSpace: barChartView.xAxis.axisMaximum / 12.0, barSpace: 0.03), barSpace: 0.03)
 //        barChartView.rightAxis.drawGridLinesEnabled = false
 //        barChartView.xAxis.decimals = 0
-
+        
         
         // set y axis
         barChartView.leftAxis.axisMinimum = 0
