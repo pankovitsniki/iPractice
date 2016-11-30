@@ -17,9 +17,12 @@ class ActivityViewController: UIViewController {
         }
     }
     
+    override func viewDidLoad() {
+        navigationItem.titleView?.tintColor = UIColor.red
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         updateChart()
     }
     
@@ -87,13 +90,6 @@ class ActivityViewController: UIViewController {
         barChartView.rightAxis.labelTextColor = UIColor.barChartMain
         barChartView.leftAxis.axisLineColor = UIColor.barChartMain
         barChartView.rightAxis.axisLineColor = UIColor.barChartMain
-
-        // set chart description
-        barChartView.chartDescription?.text = "Completed Tasks"
-        barChartView.chartDescription?.textColor = UIColor.barChartMain
-        barChartView.chartDescription?.position = CGPoint(x: Double(barChartView.frame.width)/2.0, y: Double(maxValue))
-        barChartView.chartDescription?.textAlign = NSTextAlignment.center
-        barChartView.chartDescription?.font = NSUIFont.systemFont(ofSize: 25.0)
         
         // set labels
         barChartView.xAxis.labelPosition = .bottom
@@ -106,6 +102,9 @@ class ActivityViewController: UIViewController {
         barChartView.xAxis.drawGridLinesEnabled = false
         barChartView.xAxis.labelCount = 12
 
+        // hide description
+        barChartView.chartDescription?.text = ""
+        
         // format values to decimal
         let format = NumberFormatter()
         format.numberStyle = .decimal

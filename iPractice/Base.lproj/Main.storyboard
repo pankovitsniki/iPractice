@@ -86,7 +86,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dQ-5D-BCF">
                                 <rect key="frame" x="122.5" y="300.5" width="130" height="65"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="44"/>
-                                <state key="normal" title="START"/>
+                                <state key="normal" title="START">
+                                    <color key="titleShadowColor" red="0.1764705882" green="0.3411764706" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="startButtonPressed:" destination="uOZ-ej-4EP" eventType="touchUpInside" id="dJh-t2-Wsa"/>
                                 </connections>
@@ -195,7 +197,7 @@
             </objects>
             <point key="canvasLocation" x="-1779" y="0.0"/>
         </scene>
-        <!--Activity View Controller-->
+        <!--Completed Tasks-->
         <scene sceneID="bc4-wi-yes">
             <objects>
                 <viewController id="mGF-AI-mfl" customClass="ActivityViewController" customModule="iPractice" customModuleProvider="target" sceneMemberID="viewController">
@@ -203,17 +205,16 @@
                         <viewControllerLayoutGuide type="top" id="0Iw-OC-34N"/>
                         <viewControllerLayoutGuide type="bottom" id="rC0-0W-CVf"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="oqJ-qG-Qg2">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="oqJ-qG-Qg2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LX7-Fi-3wK" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="505"/>
                                 <color key="backgroundColor" red="0.1764705882" green="0.3411764706" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.1764705882" green="0.3411764706" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" red="0.55095097179999997" green="0.76241775779999998" blue="0.96280048080000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="LX7-Fi-3wK" firstAttribute="leading" secondItem="oqJ-qG-Qg2" secondAttribute="leading" id="Cdw-Vb-sXB"/>
                             <constraint firstAttribute="trailing" secondItem="LX7-Fi-3wK" secondAttribute="trailing" id="IX5-Tc-xcN"/>
@@ -221,8 +222,7 @@
                             <constraint firstItem="rC0-0W-CVf" firstAttribute="top" secondItem="LX7-Fi-3wK" secondAttribute="bottom" id="tsf-Oz-jLW"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" id="pq2-XK-zeW"/>
+                    <navigationItem key="navigationItem" title="Completed Tasks" id="gId-q4-XlS"/>
                     <connections>
                         <outlet property="barChartView" destination="LX7-Fi-3wK" id="H1G-ZX-LHd"/>
                     </connections>
@@ -274,4 +274,5 @@
         <image name="activity-icon-new" width="25" height="25"/>
         <image name="practice-tab" width="28" height="22"/>
     </resources>
+    <color key="tintColor" red="0.1764705882" green="0.3411764706" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
 </document>

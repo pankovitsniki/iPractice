@@ -10,7 +10,8 @@ import UIKit
 
 extension UIColor {
     
-    static let background = UIColor(red: 0.9569, green: 0.9176, blue: 0.9686, alpha: 1.0)
+    static let background = UIColor(red: 0.1765, green: 0.3412, blue: 0.7686, alpha: 1.0)
+//        UIColor(red: 0.9569, green: 0.9176, blue: 0.9686, alpha: 1.0)
 //    UIColor(red: 0.1765, green: 0.3412, blue: 0.7686, alpha: 1.0)
     static let foreground = UIColor.white
 //    static let tint = UIColor(red: 0.549, green: 0.7608, blue: 0.9647, alpha: 1.0)

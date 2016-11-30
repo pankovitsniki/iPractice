@@ -41,6 +41,8 @@ class PracticeViewController: UIViewController {
         super.viewWillAppear(animated)
         
         title = task?.name
+        startButton.tintColor = UIColor.tint
+
     }
 
     /*

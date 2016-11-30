@@ -47,11 +47,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
-    
+        
     func styleApplication() {
-        UIButton.appearance().tintColor = UIColor.tint
-//        UIBarButtonItem.appearance().tintColor = UIColor.tint
+        UIButton.appearance().tintColor = UIColor.background
+        UIBarButtonItem.appearance().tintColor = UIColor.background
         UITableView.appearance()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.background]
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.background], for: .selected)
+        UITabBar.appearance().tintColor = UIColor.background
     }
 }
 
