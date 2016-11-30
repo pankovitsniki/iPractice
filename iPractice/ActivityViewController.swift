@@ -29,7 +29,7 @@ class ActivityViewController: UIViewController {
     func updateChart() {
 
         if AllTasks.shared.list.isEmpty {
-            barChartView.noDataText = "You haven't finished any tasks. Let's start one now ;)"
+            barChartView.noDataText = "You haven't finished any tasks :("
             barChartView.noDataTextColor = UIColor.foreground
             barChartView.noDataFont = UIFont.boldSystemFont(ofSize: 20)
             return
