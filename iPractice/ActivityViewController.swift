@@ -9,7 +9,7 @@
 import Foundation
 import Charts
 
-class ActivityViewController: UIViewController {
+class ActivityViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet weak var barChartView: BarChartView! {
         didSet {
@@ -18,6 +18,8 @@ class ActivityViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        barChartView.delegate = self
         navigationItem.titleView?.tintColor = UIColor.red
         
     }
@@ -49,7 +51,7 @@ class ActivityViewController: UIViewController {
                 let month = Int(complDate.month) - 1
                 values[month] = values[month] + 1
                 if values[month] > maxValue {
-                    maxValue = values[month] + 2
+                    maxValue = values[month]
                 }
             }
             
@@ -64,30 +66,32 @@ class ActivityViewController: UIViewController {
             charDataSet.colors = [UIColor.randomColor(seed: task.name).withAlphaComponent(0.4)]
             dataSets.append(charDataSet)
         }
-
+        
         let data = BarChartData(dataSets: dataSets)
         
-
         
+        //        data.groupWidth(groupSpace: barChartView.xAxis.axisMaximum / 12.0, barSpace: 0.03)
+        //        data.barWidth = 0.167
+        //        data.groupBars(fromX: 0, groupSpace: 0.2, barSpace: 0.03)
         
-//        data.groupWidth(groupSpace: barChartView.xAxis.axisMaximum / 12.0, barSpace: 0.03)
-//        data.barWidth = 0.167
-//        data.groupBars(fromX: 0, groupSpace: 0.2, barSpace: 0.03)
-
         //        barChartView.backgroundColor = UIColor(red: 0.1765, green: 0.3412, blue: 0.7686, alpha: 1.0)
         
         barChartView.data = data
         
-//        barChartView.groupBars(fromX: 0, groupSpace: data.groupWidth(groupSpace: barChartView.xAxis.axisMaximum / 12.0, barSpace: 0.03), barSpace: 0.03)
-//        barChartView.rightAxis.drawGridLinesEnabled = false
-//        barChartView.xAxis.decimals = 0
+        //        barChartView.groupBars(fromX: 0, groupSpace: data.groupWidth(groupSpace: barChartView.xAxis.axisMaximum / 12.0, barSpace: 0.03), barSpace: 0.03)
+        //        barChartView.rightAxis.drawGridLinesEnabled = false
+        //        barChartView.xAxis.decimals = 0
         
+        if (maxValue < 6) {
+            // workaround for issue where y axis would show float values for low maxValue
+            maxValue = 6
+        }
         
         // set y axis
         barChartView.leftAxis.axisMinimum = 0
         barChartView.rightAxis.axisMinimum = 0
-        barChartView.leftAxis.axisMaximum = Double(maxValue + 2)
-        barChartView.rightAxis.axisMaximum = Double(maxValue + 2)
+        barChartView.leftAxis.axisMaximum = Double(maxValue)
+        barChartView.rightAxis.axisMaximum = Double(maxValue)
         barChartView.leftAxis.labelTextColor = UIColor.barChartMain
         barChartView.rightAxis.labelTextColor = UIColor.barChartMain
         barChartView.leftAxis.axisLineColor = UIColor.barChartMain
@@ -103,7 +107,7 @@ class ActivityViewController: UIViewController {
         barChartView.gridBackgroundColor = UIColor.barChartMain
         barChartView.xAxis.drawGridLinesEnabled = false
         barChartView.xAxis.labelCount = 12
-
+        
         // hide description
         barChartView.chartDescription?.text = ""
         
@@ -113,10 +117,10 @@ class ActivityViewController: UIViewController {
         let formatter = DefaultValueFormatter(formatter: format)
         barChartView.barData?.setValueFormatter(formatter)
         
-        
         // format xAxis for month
         barChartView.xAxis.valueFormatter = BarChartFormatter()
         barChartView.animate(yAxisDuration: 1.5, easingOption: .easeInOutQuart)
+        
         
         
     }
@@ -130,5 +134,10 @@ class ActivityViewController: UIViewController {
             return months[Int(value)]
         }
     }
+    
+    //    func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: Highlight) {
+    //        print("\(entry.description)")
+    //    }
+    
 }
 
