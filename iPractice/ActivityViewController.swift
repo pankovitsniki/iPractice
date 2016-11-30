@@ -58,30 +58,30 @@ class ActivityViewController: UIViewController, ChartViewDelegate {
                 values.append(countOfCompletions)
             }
             
+            // sum completions to set up maxValue
             let sum = values.reduce(0, +)
             if (sum > maxValue) {
                 maxValue = sum + 1
             }
-
+            if (maxValue < 6) {
+                // workaround for issue where y axis would show float values for low maxValue
+                maxValue = 6
+            }
+            
             let result = BarChartDataEntry(x: Double(i), yValues: values)
             
             entries.append(result)
         }
         
+        // create data sets
         let charDataSet = BarChartDataSet(values: entries, label: "")
         charDataSet.stackLabels = labels
         charDataSet.colors = colors
         dataSets.append(charDataSet)
         
-        
         let data = BarChartData(dataSets: dataSets)
         
         barChartView.data = data
-        
-        if (maxValue < 6) {
-            // workaround for issue where y axis would show float values for low maxValue
-            maxValue = 6
-        }
         
         // set y axis
         barChartView.leftAxis.axisMinimum = 0
