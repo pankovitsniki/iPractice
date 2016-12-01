@@ -18,7 +18,7 @@ class ActivityViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -27,14 +27,14 @@ class ActivityViewController: UIViewController {
     }
     
     func updateChart() {
-
+        
         if AllTasks.shared.list.isEmpty {
             barChartView.noDataText = "You haven't finished any tasks :("
             barChartView.noDataTextColor = UIColor.foreground
             barChartView.noDataFont = UIFont.boldSystemFont(ofSize: 20)
             return
         }
-
+        
         var maxValue = 0.0
         
         var entries: [ChartDataEntry] = Array()
@@ -61,7 +61,7 @@ class ActivityViewController: UIViewController {
             // sum completions to set up maxValue
             let sum = values.reduce(0, +)
             if (sum > maxValue) {
-                maxValue = sum + 1
+                maxValue = sum + 2
             }
             if (maxValue < 6) {
                 // workaround for issue where y axis would show float values for low maxValue
@@ -69,17 +69,16 @@ class ActivityViewController: UIViewController {
             }
             
             let result = BarChartDataEntry(x: Double(i), yValues: values)
-            
             entries.append(result)
         }
         
         // create data sets
         
-        let charDataSet = BarChartDataSet(values: entries, label: nil)
-        charDataSet.stackLabels = labels
-        charDataSet.colors = colors
+        let chartDataSet = BarChartDataSet(values: entries, label: nil)
+        chartDataSet.stackLabels = labels
+        chartDataSet.colors = colors
         
-        let data = BarChartData(dataSet: charDataSet)
+        let data = BarChartData(dataSet: chartDataSet)
         
         barChartView.data = data
         
@@ -97,6 +96,7 @@ class ActivityViewController: UIViewController {
         barChartView.xAxis.labelPosition = .bottom
         barChartView.xAxis.labelTextColor = UIColor.barChartMain
         barChartView.barData?.setValueTextColor(UIColor.barChartMain)
+//        barChartView.startAtZeroEnabled = NO
         barChartView.tintColor = UIColor.barChartMain
         barChartView.xAxis.axisLineColor = UIColor.barChartMain
         barChartView.xAxis.gridColor = UIColor.barChartMain
